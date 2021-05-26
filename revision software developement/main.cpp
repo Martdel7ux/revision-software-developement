@@ -45,7 +45,13 @@ int main()
     
     if(choice==2)
     {
+        cout<<"enter starting value "<<endl;
+        cin>>num1;
         
+        cout<<"enter an end value"<<endl;
+        cin>>num2;
+        
+        productofrange(num1, num2);
     }
     
     
@@ -67,6 +73,20 @@ int sumofrange(int start_val,int end_val)
     }
     
     cout<<"sum of range is"<<sum<<endl;
+    
+    return 0;
+}
+
+int productofrange(int start_val, int end_val)
+{
+    int product=1;
+   
+    for(int i=start_val; i<=end_val; i++)
+    {
+        product= product*i;
+    }
+    
+    cout<<"product is "<<product<<endl;
     
     return 0;
 }
