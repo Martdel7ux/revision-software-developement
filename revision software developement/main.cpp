@@ -21,6 +21,7 @@ int main()
     int choice=0;
     int num1;
     int num2;
+    int num;
     
     cout<<"choose an option"<<endl;
     
@@ -57,7 +58,10 @@ int main()
     
     if(choice==3)
     {
+        cout<<"enter the number"<<endl;
+        cin>>num;
         
+        ispositive(num);
     }
     
     
@@ -87,6 +91,25 @@ int productofrange(int start_val, int end_val)
     }
     
     cout<<"product is "<<product<<endl;
+    
+    return 0;
+}
+
+bool ispositive(double value)
+{
+    if(value>=0)
+    {
+        cout<<"number is positive"<<endl;
+        
+        
+    }
+   
+    else
+    {
+        cout<<"number is negative"<<endl;
+         
+        return false;
+    }
     
     return 0;
 }
