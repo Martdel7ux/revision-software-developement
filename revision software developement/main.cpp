@@ -7,10 +7,11 @@
 
 
 #include <iostream>
-
+#include<cassert>
 using namespace std;
 
 //function prototypes
+void menu();
 int sumofrange(int start_val,int end_val);
 int productofrange(int start_val,int end_val);
 bool ispositive(double value);
@@ -25,19 +26,17 @@ int main()
     int num2;
     int num;
     
-    //prints options to the user
-    cout<<"choose an option"<<endl;
     
-    cout<<"1) to calculate range"<<endl;
     
-    cout<<"2) to find product of range"<<endl;
     
-    cout<<"3) to check if a number is positive"<<endl;
+    while(choice!=4)//introducing while loop
+    {
+    menu(); //prints options to the user
     
     //prompts user to enter a choice
+     
     cout<<"choose a choice"<<endl;
     cin>>choice;
-   
     
     
     
@@ -72,6 +71,7 @@ int main()
         ispositive(num);//function call for ispositive
     }
     
+    }//end of while loop
    
     
     
@@ -89,16 +89,22 @@ int main()
  */
 int sumofrange(int start_val,int end_val)
 {
-    int sum=0;//declaring of variable sum
+    //testing precondition
+    assert(start_val > 0);
     
+    int sum=0;//declaring of variable sum
+    int i;
     //for loop to iterate end vals and start vals
-    for(int i=start_val; i<=end_val; i++)
+    for(  i=start_val; i<=end_val; i++)
     {
         sum=sum+i; //algorithm for the sum of numbers
     }//end of for loop
     
     //outputs the sum to the screen of the user
     cout<<"sum of range is"<<sum<<endl;
+    
+    //testing post condition
+    assert(start_val==i);
     
     return 0; //returns the function
 }
@@ -139,6 +145,8 @@ bool ispositive(double value)
     //check if value is greater or equal to 0
     if(value>=0)
     {
+         
+        
         //prints the state of the value to the screen to the user
         cout<<"number is positive"<<endl;
         
@@ -155,3 +163,15 @@ bool ispositive(double value)
     return 0;
 }//end of function
 
+void menu()
+{
+    
+    //prints options to the user
+    cout<<"choose an option"<<endl;
+    
+    cout<<"1) to calculate range"<<endl;
+    
+    cout<<"2) to find product of range"<<endl;
+    
+    cout<<"3) to check if a number is positive"<<endl;
+}
